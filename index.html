@@ -429,7 +429,7 @@ body.loaded #preloader{transition:visibility 0s 1.6s;visibility:hidden}
 }
 .marquee::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
 .marquee::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
-.mq-track{display:flex;width:max-content;animation:mq 44s linear infinite}
+.mq-track{display:flex;width:max-content;max-width:none;animation:mq 44s linear infinite}
 .marquee:hover .mq-track{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
 .mq-item{
@@ -515,7 +515,8 @@ body.loaded #preloader{transition:visibility 0s 1.6s;visibility:hidden}
 }
 .attr .ico svg{width:15px;height:15px}
 .attr h4{font-family:var(--sans);font-size:.75rem;font-weight:600;letter-spacing:.03em}
-.attr p{font-size:.71rem;color:var(--txt-3);margin-top:.3rem;line-height:1.65}
+.attr p{font-size:.71rem;color:var(--txt-3);margin-top:.3rem;line-height:1.65;overflow-wrap:anywhere;word-break:break-word}
+.attr p strong.gold{color:var(--gold);font-weight:700;font-style:normal;font-family:var(--sans)}
 
 /* ============ FICHA CASTING ============ */
 #ficha{background:var(--stage);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -773,7 +774,7 @@ body.loaded #preloader{transition:visibility 0s 1.6s;visibility:hidden}
 
 /* ============ GALERÍA ============ */
 #galeria{background:var(--ink);border-top:1px solid var(--line)}
-.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem;margin-top:2.6rem}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.6rem}
 .gslot{
   position:relative;aspect-ratio:3/4;border:1px dashed rgba(201,169,97,.32);border-radius:4px;
   background:linear-gradient(160deg,rgba(201,169,97,.045),var(--panel) 62%);
@@ -916,6 +917,7 @@ footer{background:#050507;border-top:1px solid var(--line);padding:3.2rem 0 2rem
 
 /* ============ RESPONSIVE ============ */
 @media(max-width:1080px){
+  .gal-grid{grid-template-columns:1fr 1fr}
   .hero-grid{grid-template-columns:1fr;gap:2.4rem}
   .hero-card{max-width:400px}
   .med-grid,.arp-grid,.con-grid{grid-template-columns:1fr}
@@ -939,7 +941,7 @@ footer{background:#050507;border-top:1px solid var(--line);padding:3.2rem 0 2rem
   .hero-role{gap:.65rem;font-size:.63rem;letter-spacing:.2em}
   .sec-pad{padding:3.6rem 0}
   .stat b{font-size:2rem}
-  .gal-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .gal-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:420px){
   .stat-grid{grid-template-columns:1fr}
@@ -1385,7 +1387,7 @@ footer{background:#050507;border-top:1px solid var(--line);padding:3.2rem 0 2rem
           </div>
           <div class="attr">
             <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 2l-5 5-5-5"/></svg></div>
-            <div><h4>Audiovisual</h4><p><em>El Laberinto de las Mariposas</em> (Netflix), <em>Centro Médico</em>, <em>Arrayán</em>, Impares, Aquí no hay quien viva, Amar en Tiempos Revueltos</p></div>
+            <div><h4>Audiovisual</h4><p><strong class="gold">El Laberinto de las Mariposas</strong> (Netflix), <strong class="gold">Centro Médico</strong>, <strong class="gold">Arrayán</strong>, <strong class="gold">Impares</strong>, <strong class="gold">Aquí no hay quien viva</strong>, <strong class="gold">Amar en Tiempos Revueltos</strong></p></div>
           </div>
         </div>
       </div>
@@ -2040,6 +2042,10 @@ footer{background:#050507;border-top:1px solid var(--line);padding:3.2rem 0 2rem
 
     <div class="gal-grid">
       <figure class="gslot gslot--real" tabindex="0">
+        <img src="assets/angel-padilla-headshot.jpg" alt="Retrato profesional de Ángel Padilla, foto del hero" loading="lazy">
+        <figcaption><b>Headshot</b><span>Retrato oficial</span></figcaption>
+      </figure>
+      <figure class="gslot gslot--real" tabindex="0">
         <img src="assets/angel-artista.jpg" alt="Ángel Padilla, retrato de book" loading="lazy">
         <figcaption><b>Retrato</b><span>Book profesional</span></figcaption>
       </figure>
@@ -2115,38 +2121,8 @@ footer{background:#050507;border-top:1px solid var(--line);padding:3.2rem 0 2rem
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="f-grid">
-      <div class="f-brand">
-        <b>Ángel Padilla</b>
-        <span>Actor · Tenor dramático · Productor musical</span>
-        <p>
-          Actor, cantante y productor musical español. Licenciado por la RESAD de Madrid, con más de
-          veinte años de trayectoria en los grandes musicales de la Gran Vía madrileña.
-        </p>
-      </div>
-
-      <div class="f-col">
-        <h5>Secciones</h5>
-        <a href="#perfil">Perfil</a>
-        <a href="#ficha">Ficha de casting</a>
-        <a href="#trayectoria">Trayectoria</a>
-        <a href="#medios">TV &amp; Prensa</a>
-        <a href="#arpadia">Música</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-
-      <div class="f-col">
-        <h5>Enlaces</h5>
-        <a href="https://www.stage.es/musicales/el-rey-leon/actores/angel-padilla" target="_blank" rel="noopener">Ficha en El Rey León</a>
-        <a href="https://es.wikipedia.org/wiki/%C3%81ngel_Padilla_(actor)" target="_blank" rel="noopener">Wikipedia</a>
-        <a href="http://arpadia.es/" target="_blank" rel="noopener">arpadia.es</a>
-        <a href="https://www.instagram.com/angelpadilla__/" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-
     <div class="f-bot">
       <span>© <span id="yr">2026</span> Ángel Padilla. Todos los derechos reservados.</span>
-      <span>Retrato oficial cedido por <a href="https://www.stage.es/musicales/el-rey-leon/actores/angel-padilla" target="_blank" rel="noopener">Stage Entertainment</a>.</span>
     </div>
   </div>
 </footer>
@@ -2474,20 +2450,6 @@ footer{background:#050507;border-top:1px solid var(--line);padding:3.2rem 0 2rem
       }
     }, {passive:true});
   }
-})();
-</script>
-</body>
-</html>
-})();
-</script>
-</body>
-</html>
-rue});
-  }
-})();
-</script>
-</body>
-</html>
 })();
 </script>
 </body>
