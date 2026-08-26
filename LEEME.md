@@ -26,9 +26,9 @@ No queda ningún campo pendiente de rellenar. La ficha está publicada con estos
 |---|---|
 | Email de contacto | `angelpadilla@arpadia.es` |
 | Idiomas | Castellano · Inglés |
-| Registro vocal | Barítono dramático |
+| Registro vocal | Tenor dramático |
 | Estado | Disponible |
-| El Rey León | 2019 – 2025 (seis temporadas, finalizado) |
+| El Rey León | 2019 – 2025 (ocho temporadas, finalizado) |
 
 Se han retirado de la ficha los campos de altura, carné de conducir, teléfono y
 representante, tal como se pidió. Si en algún momento quiere recuperarlos, basta con
